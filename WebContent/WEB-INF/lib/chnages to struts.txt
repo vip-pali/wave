@@ -1,0 +1,2 @@
+<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+<constant name="struts.action.excludePattern" value="/rest.*?" />

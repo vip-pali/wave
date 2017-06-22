@@ -1,0 +1,114 @@
+/* CSS Document */
+body {
+	background:#000!important;
+	color:#fff;
+	}
+
+* {
+	border-color:#e2e2e2!important;
+	color:#fff!important;
+	}
+
+.wrapper{background:#000!important;}
+
+.header{background:#000!important;
+        color:#fff;}
+		
+.main-wrapp{background:#000!important;
+            color:#fff;}	
+			
+.container{background:#000!important;
+            color:#fff;}				
+
+.panel{background:#000!important;
+       color:#fff;}
+
+.content-wrapper{background:#000!important;
+            color:#fff;}
+.area_container{background:#000!important;
+            color:#fff;}
+
+
+.form-control{color:#555!important;}
+
+
+input[type="submit"]{color: #424242!important;}
+
+a {
+	color:#fff600!important;
+	background-color:inherit;
+	}
+
+a:hover {
+	color:#fff!important;
+	background-color:inherit;
+	}
+/*list styles*/
+ul.lists li {
+	background-image:url(../images/high/blts.gif)!important;
+	}
+ul.lists li a {
+	color:#fff600;
+	background-color:transparent;
+	}
+ul.lists li a:hover {
+	color:#fff;
+	background-color:transparent;
+	text-decoration:none;
+	}
+/*list styles*/
+
+
+#topPanel ul li {
+	color:#fff600!important;
+	background-color:transparent;
+	}
+#topPanel ul li a.language {
+	background:url(../images/high/language.gif) no-repeat 0 4px;
+	}
+
+#topPanel ul li a.dark {
+	width:18px;
+	height:18px;
+	background:#000000;
+	color:#FFFFFF;
+	border:1px solid;
+	}
+#topPanel ul li a.light {
+	width:18px;
+	height:18px;
+	background:#fff!important;
+	color:#000!important;
+	border:1px solid;
+	}
+
+#mainBody {
+	background-image:none;
+	background-color:#000!important;
+	}
+
+/*style for top panel start here*/
+#topPanel {
+	background:#000;
+	color:#fff;
+	}
+
+
+a.more {
+	background:url(../images/high/blt-dark.gif) no-repeat 0 6px;
+	background-color:inherit;
+	padding:0 0 0 11px;
+	}
+a.more:hover {
+	color:#fff!important;
+	background-color:inherit;
+	}
+
+.footer2 { background-color:#000!important;}
+
+.panel-part{ background-color:#000;}
+.section-top-wrapper{ background-color:#000;}
+
+/*.bodyPanel h3 {
+	font:bold 1.5em/1.25em Georgia, "Times New Roman", Times, serif;
+}*/

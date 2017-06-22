@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>wave</display-name>
+  
+	<!-- start :: code added for security audit clearance -->
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>restricted methods</web-resource-name>
+			<url-pattern>/*</url-pattern>
+			<http-method>TRACE</http-method>
+			<http-method>PUT</http-method>
+			<http-method>OPTIONS</http-method>
+			<http-method>DELETE</http-method>
+		</web-resource-collection>
+		<auth-constraint />					
+	</security-constraint>
+	<!-- end :: code added for security audit clearance -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/classes/applicationContext.xml</param-value>
+	</context-param>
+	
+	<context-param>
+		<description>This context parameter specifies the name and location of the Tiles Definitions file.</description>
+		<param-name>org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG</param-name>
+		<param-value>/WEB-INF/classes/tiles.xml</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>config</param-name>
+		<param-value>/WEB-INF/classes/struts.xml</param-value>
+	</context-param>
+	
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+	
+	<listener>
+		<listener-class>org.apache.struts2.tiles.StrutsTilesListener</listener-class>
+	</listener>	
+	
+	
+	
+	<filter>
+    	<filter-name>ResponseOverrideFilter</filter-name> 
+    	<filter-class>org.displaytag.filter.ResponseOverrideFilter</filter-class> 
+	</filter>
+	
+	<filter-mapping>
+    	<filter-name>ResponseOverrideFilter</filter-name> 
+    	<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+  	<session-config>
+		<session-timeout>30</session-timeout>
+		<tracking-mode>COOKIE</tracking-mode>
+	</session-config>
+	
+	<welcome-file-list>
+		<welcome-file>/WEB-INF/pages/start.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<error-page>
+		<error-code>500</error-code>
+		<location>/WEB-INF/pages/404.html</location>
+	</error-page>
+	
+	<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/pages/404.html</location>
+	</error-page>
+</web-app>

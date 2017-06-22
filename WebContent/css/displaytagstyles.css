@@ -1,0 +1,118 @@
+span.pagebanner {
+	padding: 2px 4px 2px 4px;
+	margin: 0px 0px 0px 0px;
+	display: block;
+	border-bottom: none;
+	text-align: left;
+}
+
+span.msg {
+	padding: 2px 4px 2px 4px;
+	margin: 10px 0px 5px 0px;
+	display: block;
+	border-bottom: none;
+	color: red;
+	font-size: 12px;
+	text-align: center;
+}
+
+span.pagelinks {
+	padding: 2px 4px 2px 4px;
+	display: inline;
+	border-top: none;
+	margin-bottom: 5px;
+}
+
+span.pagelinks a,span.pagebanner a {
+	color: #063972;
+}
+
+table.display-tag-table {
+	width: 100%;
+	border-bottom: 1px solid #78B0AF;
+}
+
+table.display-tag-table th {
+	background-color: #1A96C2!important;
+	/* border: 1px solid #F0F8D4; */
+	border-radius:0px;
+	color: white;
+    font-size: 100%;
+	text-align: left;
+	padding: 12px 5px;
+}
+
+table.display-tag-table td.cent {
+	padding: 5px;
+	text-align: center;
+	width: 20%;
+}
+
+table.display-tag-table td {
+	padding: 2px;
+	padding-left: 5px;
+	text-align: left;
+	/*width: 20%;*/
+	font-size:100%;
+}
+
+table.display-tag-table tr.empty td {
+	text-align: center;
+	height: 50px;
+	vertical-align: middle;
+}
+
+table.display-tag-table tr.odd {
+	background-color: white;
+	height: 25px;
+}
+
+table.display-tag-table tr.tableRowEven,tr.even {
+	background-color: #EEEEEE;
+	height: 20px;
+}
+
+table.display-tag-table caption {
+	background-color: #e9ddea;
+	text-align: left;
+	font-weight: bold;
+	font-size: medium;
+	padding: 3px;
+	width: 96.3%;
+	margin-left: 3px;
+	font-family: verdana;
+	font-size: 13px;
+	color: #F0F8D4;
+}
+
+table.display-tag-table tfoot {
+	background-color: #78B0AF;
+	border: none;
+	color: #78B0AF;
+}
+
+table.display-tag-table tfoot td {
+	padding: 3px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+table.display-tag-table a {
+	font-family: verdana, arial, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	text-decoration: none;
+	color: #063972;
+}
+
+table.display-tag-table a:hover {
+	font-family: verdana, arial, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	color: #063972;
+	text-decoration: underline;
+}
+
+.colId {
+width: 12%;
+}

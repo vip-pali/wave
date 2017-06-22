@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN" 
+		"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+	<definition name="indexPageLayout" template="/WEB-INF/pages/index.jsp">		
+		<put-attribute name="title" value="Welcome" />
+	</definition>
+	
+	<definition name="adminUserlandingPageLayout" template="/WEB-INF/pages/adminLandingPage.jsp">		
+		<put-attribute name="title" value="Welcome Admin" />
+	</definition>
+	
+	<definition name="centerUserlandingPageLayout" template="/WEB-INF/pages/centerUserLandingPage.jsp">		
+		<put-attribute name="title" value="Welcome" />
+	</definition>
+	
+	<definition name="adminUserViewPageLayout" template="/WEB-INF/pages/viewCenters.jsp">		
+		<put-attribute name="title" value="Welcome Admin" />
+	</definition>
+	
+	<definition name="createCredentialPageLayout" template="/WEB-INF/pages/createUserCredential.jsp">		
+		<put-attribute name="title" value="Welcome Admin" />
+	</definition>
+	
+	<definition name="studentPaymentDetailsPageLayout" template="/WEB-INF/pages/studentPaymentDetails.jsp">		
+		<put-attribute name="title" value="Welcome" />
+	</definition>
+	
+	<!-- Admin Pages -->
+	<definition name="viewAllStudentPaymentDetailsListPageLayout" template="/WEB-INF/pages/viewAllStudentPaymentDetailsList.jsp">		
+		<put-attribute name="title" value="Welcome Admin" />
+	</definition>
+	
+	<definition name="editStudentPaymentDetailsPageLayout" template="/WEB-INF/pages/editStudentPaymentDetails.jsp">		
+		<put-attribute name="title" value="Welcome Admin" />
+	</definition>
+	
+	<definition name="createAdminPageLayout" template="/WEB-INF/pages/createAdmin.jsp">		
+		<put-attribute name="title" value="Welcome Super Admin!" />
+	</definition>
+	
+	<definition name="changeCenterUserPasswordPageLayout" template="/WEB-INF/pages/changeCenterUserPassword.jsp">		
+		<put-attribute name="title" value="Welcome Super Admin!" />
+	</definition>
+	
+	<!-- Admin Pages  -->
+	
+	
+	
+</tiles-definitions>

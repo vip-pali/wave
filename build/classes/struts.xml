@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  Struts configuration DTD -->
+ 
+   <!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+    
+<struts>
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.mapper.action.prefix.enabled" value="true" /> <!-- when set to false support for "action:" prefix is disabled, set to false by default -->
+	<constant name="struts.mapper.action.prefix.crossNamespaces" value="false" /> <!-- when set to false, actions defined with "action:" prefix must be in 
+																					the same namespace as current action -->
+	<constant name="struts.multipart.maxSize" value="53477376" />
+	<constant name="struts.action.excludePattern" value="/webservice.*?" />
+	<constant name="struts.action.excludePattern" value="/RESTServices.*?" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	
+	
+	<package name="default" extends="struts-default">
+		<result-types>
+			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+			<result-type name="json" class="org.apache.struts2.json.JSONResult" />
+		</result-types>
+		
+		<!-- <Interceptors>
+			<interceptor-stack name="security-stack">
+				<interceptor-ref name="tokenSession">
+					<param name="excludeMethods">*</param>
+				</interceptor-ref>
+			</interceptor-stack>		
+		</Interceptors> -->
+		
+		
+		<default-class-ref class="home"></default-class-ref>
+		
+		<!-- Global Results -->
+		
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="Exception" />
+		</global-exception-mappings>
+		
+		
+		
+		<action name="home" method="home" class="com.wave.action.UserAction">
+			<!-- <result name="success">/WEB-INF/pages/index.jsp</result> -->
+			<result name="success" type="tiles">indexPageLayout</result>
+		</action>
+		
+		<action name="userlogin" class="com.wave.action.UserLoginAction">	
+			<result name="adminUser" type="redirect">adminUserhome</result>		
+			<result name="centerUser" type="redirect">centerUserhome</result>
+			<result name="input" type="chain">home</result>
+			<result name="invalid.token" type="tiles">indexPageLayout</result>			
+		</action>
+		
+		<action name="logout" class="com.wave.action.UserLogout">
+			
+			<!-- <interceptor-ref name="security-stack">
+				<param name="tokenSession.includeMethods">*</param>
+			</interceptor-ref> -->
+			<result name="success" type="redirect">home</result>
+			
+		</action>
+		
+		<action name="adminUserhome" class="com.wave.action.UserAction">		
+
+			<result name="success" type="tiles">adminUserlandingPageLayout</result>	 		
+			
+		</action>
+	
+		<action name="centerUserhome" class="com.wave.action.UserAction" method="centerUserHome">			
+
+			<result name="success" type="tiles">centerUserlandingPageLayout</result>		 		
+			
+		</action>
+		
+		<action name="gotoCreateCenter" class="com.wave.action.UserAction" method="gotoCreateCenter">		
+
+			<result name="success" type="tiles">adminUserlandingPageLayout</result>
+			<result name="error" type="tiles">adminUserlandingPageLayout</result>
+			<result name="input" type="tiles">adminUserlandingPageLayout</result>	 		
+			
+		</action>	
+		
+		<action name="gotoCreateUserCredential" class="com.wave.action.UserAction" method="gotoCreateUserCredential">		
+
+			<result name="success" type="tiles">createCredentialPageLayout</result>
+			<result name="error" type="tiles">createCredentialPageLayout</result>
+			<result name="input" type="tiles">createCredentialPageLayout</result>	 		
+			
+		</action>
+		
+		<action name="gotoViewCenters" class="com.wave.action.UserAction" method="gotoViewCenters">		
+
+			<result name="success" type="tiles">adminUserViewPageLayout</result>
+			<result name="error" type="tiles">adminUserViewPageLayout</result>
+			<result name="input" type="tiles">adminUserViewPageLayout</result>	 		
+			
+		</action>
+		
+		<action name="viewCenters" class="com.wave.action.UserAction" method="viewCenters">		
+
+			<result name="success" type="tiles">adminUserViewPageLayout</result>
+			<result name="error" type="tiles">adminUserViewPageLayout</result>
+			<result name="input" type="tiles">adminUserViewPageLayout</result>	 		
+			
+		</action>
+		
+		<action name="createCenter" class="com.wave.action.UserAction" method="createCenter">		
+
+			<result name="success" type="tiles">adminUserlandingPageLayout</result>
+			<result name="error" type="tiles">adminUserlandingPageLayout</result>
+			<result name="input" type="tiles">adminUserlandingPageLayout</result>	 		
+			
+		</action>	
+		
+		<action name="createUserCredential" class="com.wave.action.UserAction" method="createUserCredential">		
+
+			<result name="success" type="tiles">createCredentialPageLayout</result>
+			<result name="error" type="tiles">createCredentialPageLayout</result>
+			<result name="input" type="tiles">createCredentialPageLayout</result>	 		
+			
+		</action>		
+		
+		<action name="getDistrictListForState" method="getDistrictListForState" class="com.wave.action.AjaxCommanAction">
+			
+		</action>
+		
+		<!-- this method to get district list based on state which are present ref_center table -->
+		<action name="getDistrictList" method="getDistrictList" class="com.wave.action.AjaxCommanAction">
+			
+		</action>
+		
+		<action name="getCenterList" method="getCenterList" class="com.wave.action.AjaxCommanAction">
+			
+		</action>
+		
+		<action name="gotostudentPaymentDetailsPage" class="com.wave.action.UserAction" method="gotostudentPaymentDetailsPage">		
+
+			<result name="success" type="tiles">studentPaymentDetailsPageLayout</result>
+			<result name="error" type="tiles">studentPaymentDetailsPageLayout</result>
+			<result name="input" type="tiles">studentPaymentDetailsPageLayout</result>	 		
+			
+		</action>
+		
+		<action name="saveStudentPaymentDetails" class="com.wave.action.UserAction" method="saveStudentPaymentDetails">		
+
+			<result name="success" type="tiles">studentPaymentDetailsPageLayout</result>
+			<result name="error" type="tiles">studentPaymentDetailsPageLayout</result>
+			<result name="input" type="tiles">studentPaymentDetailsPageLayout</result>	 		
+			
+		</action>
+		
+		<action name="gotoViewAllStudentPaymentDetails" class="com.wave.action.UserAction" method="gotoViewAllStudentPaymentDetails">		
+
+			<result name="success" type="tiles">viewAllStudentPaymentDetailsListPageLayout</result>
+			<result name="error" type="tiles">viewAllStudentPaymentDetailsListPageLayout</result>
+			<result name="input" type="tiles">viewAllStudentPaymentDetailsListPageLayout</result>	 		
+			
+		</action>
+		 
+		<action name="viewAllStudentPaymentDetailsList" class="com.wave.action.UserAction" method="viewAllStudentPaymentDetailsList">		
+
+			<result name="success" type="tiles">viewAllStudentPaymentDetailsListPageLayout</result>
+			<result name="error" type="tiles">viewAllStudentPaymentDetailsListPageLayout</result>
+			<result name="input" type="tiles">viewAllStudentPaymentDetailsListPageLayout</result>	 		
+			
+		</action> 
+		
+		<action name="editStudentPaymentDetails" class="com.wave.action.UserAction" method="editStudentPaymentDetails">		
+
+			<result name="success" type="tiles">editStudentPaymentDetailsPageLayout</result>
+			<result name="error" type="tiles">editStudentPaymentDetailsPageLayout</result>
+			<result name="input" type="tiles">editStudentPaymentDetailsPageLayout</result>	 		
+			
+		</action> 
+		
+		<action name="saveEditedStudentPaymentDetails" class="com.wave.action.UserAction" method="saveEditedStudentPaymentDetails">		
+
+			<result name="success" type="tiles">editStudentPaymentDetailsPageLayout</result>
+			<result name="error" type="tiles">editStudentPaymentDetailsPageLayout</result>
+			<result name="input" type="tiles">editStudentPaymentDetailsPageLayout</result>	 		
+			
+		</action> 
+		
+		<!-- Confidential Link -->
+		
+		<action name="createAdmin" class="com.wave.action.UserAction" method="gotoAdminPage">		
+
+			<result name="success" type="tiles">createAdminPageLayout</result>
+			<result name="error" type="tiles">createAdminPageLayout</result>
+			<result name="input" type="tiles">createAdminPageLayout</result>	 		
+			
+		</action> 
+		
+		<action name="createAdminCredential" class="com.wave.action.UserAction" method="createAdminCredential">		
+
+			<result name="success" type="tiles">createAdminPageLayout</result>
+			<result name="error" type="tiles">createAdminPageLayout</result>
+			<result name="input" type="tiles">createAdminPageLayout</result>	 		
+			
+		</action> 
+		
+		<action name="gotoCenterUserPasswordPage" class="com.wave.action.UserAction" method="gotoCenterUserPasswordPage">		
+
+			<result name="success" type="tiles">changeCenterUserPasswordPageLayout</result>
+			<result name="error" type="tiles">changeCenterUserPasswordPageLayout</result>
+			<result name="input" type="tiles">changeCenterUserPasswordPageLayout</result>	 		
+			
+		</action>
+		
+		<action name="fetchCenterUserPassword" class="com.wave.action.UserAction" method="fetchCenterUserPassword">		
+
+			<result name="success" type="tiles">changeCenterUserPasswordPageLayout</result>
+			<result name="error" type="tiles">changeCenterUserPasswordPageLayout</result>
+			<result name="input" type="tiles">changeCenterUserPasswordPageLayout</result>	 		
+			
+		</action>
+		
+		<action name="changeCenterUserPassword" class="com.wave.action.UserAction" method="changeCenterUserPassword">		
+
+			<result name="success" type="tiles">changeCenterUserPasswordPageLayout</result>
+			<result name="error" type="tiles">changeCenterUserPasswordPageLayout</result>
+			<result name="input" type="tiles">changeCenterUserPasswordPageLayout</result>	 		
+			
+		</action>
+		
+		<!--  Report Section -->
+		<action name="studentPaymentReceipt" class="com.wave.action.GenerateReportAction"
+			method="studentPaymentReceipt">
+			
+			<result name="success" type="stream">
+				<param name="contentType">contentType</param>
+				<param name="inputName">fileStream</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="bufferSize">1024</param>
+			</result>
+			
+			<result name="input" type="chain">viewStudentPaymentDetails</result>
+			<result name="error" type="chain">viewStudentPaymentDetails</result>
+			
+		</action>
+		
+		<!-- Report Section ***end -->
+		
+		
+		 
+		
+	</package>
+</struts>

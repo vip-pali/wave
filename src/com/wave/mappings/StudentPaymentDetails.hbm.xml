@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wave.pojo.StudentPaymentDetails" table="student_payment_details" schema="public">
+    	<id name="id" type="java.lang.Integer">
+            <column name="id" />       
+             <generator class="identity" />     
+        </id>
+        
+       
+		<property name="candidateName" type="java.lang.String">
+			<column name="candidate_name" />
+		</property>	
+		
+		<property name="parentName" type="java.lang.String">
+			<column name="parent_name" />
+		</property>	
+		
+		<property name="address" type="java.lang.String">
+			<column name="address" />
+		</property>	
+		
+		<property name="totalCourseFees" type="java.lang.Long">
+			<column name="total_course_fees" />
+		</property>
+		
+		<property name="amountRecieved" type="java.lang.Long">
+			<column name="amt_recieved" />
+		</property>
+		
+		<property name="balanceAmount" type="java.lang.Long">
+			<column name="balance_amount" />
+		</property>
+		
+		<property name="paymentMode" type="java.lang.Character">
+			<column name="payment_mode" />
+		</property>
+		
+		<property name="bankDetails" type="java.lang.String">
+			<column name="bank_details" />
+		</property>	
+		
+		<property name="chequeDDNumber" type="java.lang.Long">
+			<column name="cheque_dd_no" />
+		</property>			
+		
+		<!-- <property name="chequeDated" type="java.util.Date">
+			<column name="cheque_dated" />
+		</property>	 -->
+		
+		<property name="chequeDated" type="java.lang.String">
+			<column name="cheque_dated" />
+		</property>	 
+		
+		<property name="nameOfAuthSign" type="java.lang.String">
+			<column name="name_of_auth_singn" />
+		</property>	
+		
+		<many-to-one name="courseId" lazy="false"
+			class="com.wave.pojo.RefCourse" column="course_id" 
+			unique="true" />
+		
+		<many-to-one name="centerId" lazy="false"
+			class="com.wave.pojo.RefCenter" column="center_id"
+			unique="true" /> 
+		
+		
+        
+       
+       
+       
+        
+        
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.wave.pojo.UserMaster" table="user_master" schema="public">
+    	<id name="email" type="java.lang.String">
+            <column name="email_address" />       
+             <generator class="assigned" />     
+        </id>	 	
+		
+		<property name="password" type="java.lang.String">
+			<column name="password" />
+		</property>		
+		
+		<property name="roleId" type="java.lang.Integer">
+			<column name="role_id" />
+		</property>
+		
+		<property name="activeStatus" type="java.lang.Integer">
+			<column name="active_status" />
+		</property>			
+		
+		<property name="dateTime" type="java.util.Date">
+			<column name="date_time" />
+		</property>	
+		
+		<property name="centerCode" type="java.lang.String">
+			<column name="center_code" />
+		</property>
+		
+		<many-to-one name="centerId" lazy="false"
+			class="com.wave.pojo.RefCenter" column="center_id" cascade="all-delete-orphan"
+			unique="true" /> 
+		
+		
+		
+		
+        
+       
+       
+       
+        
+        
+    </class>
+</hibernate-mapping>
